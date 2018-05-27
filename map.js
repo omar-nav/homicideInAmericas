@@ -28,7 +28,7 @@ function styleHomicides(feature) {
 }
 function geojsonPopup2000(feature, layer){
     if(feature.properties.SOVEREIGNT){
-        layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>2000 Total Homicides:   '+ feature.properties.refactor_3 + '<br>2000 Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000 population')
+        layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>2000 Total Homicides:   '+ feature.properties.refactor_3 + '<br>2000 Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000')
     }
 }
 
