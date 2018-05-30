@@ -26,15 +26,15 @@ function styleHomicides(feature) {
         fillColor: choroplethize(feature.properties.refactor_4)
     }
 }
-function geojsonPopup2000(feature, layer){
+function geojsonPopup(feature, layer){
     if(feature.properties.SOVEREIGNT){
         layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>Total Homicides:   '+ feature.properties.refactor_3 + '<br>Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000')
     }
 }
 
-L.geoJSON([homicides2005.bindTooltip("test")], {
+L.geoJSON([homicides2015], {
     style: styleHomicides,
-    onEachFeature: geojsonPopup2000,
+    onEachFeature: geojsonPopup,
     pointToLayer: function (feature, latlng) {
         return L.marker(latlng);
     }
