@@ -28,11 +28,11 @@ function styleHomicides(feature) {
 }
 function geojsonPopup2000(feature, layer){
     if(feature.properties.SOVEREIGNT){
-        layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>2000 Total Homicides:   '+ feature.properties.refactor_3 + '<br>2000 Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000')
+        layer.bindPopup('Country:   ' + feature.properties.SOVEREIGNT + '<br>Total Homicides:   '+ feature.properties.refactor_3 + '<br>Homicide Rate:   '+ feature.properties.refactor_4 + ' per 100,000')
     }
 }
 
-L.geoJSON([homicides2000], {
+L.geoJSON([homicides2005.bindTooltip("test")], {
     style: styleHomicides,
     onEachFeature: geojsonPopup2000,
     pointToLayer: function (feature, latlng) {
